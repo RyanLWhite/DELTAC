@@ -1,0 +1,45 @@
+# This is the makefile for DELTAC on DarwinIntel computers.
+
+FFLAGS = -traceback -O2
+F90 = ifort $(FFLAGS)
+
+INTELLIBS= \
+	$(MKLROOT)/lib/libmkl_intel_lp64.a \
+	$(MKLROOT)/lib/libmkl_core.a \
+	$(MKLROOT)/lib/libmkl_sequential.a \
+	-lpthread -lm
+
+.f.o:
+	$(F90) -c $*.f
+
+LIBDIR = \
+	-L../lib/DarwinIntel \
+
+LIBS = \
+	$(INTELLIBS) \
+	$(LIBDIR) \
+	-llsode
+
+OBJS = \
+	io.o \
+	local.o \
+	gamma.o \
+	jacobi.o \
+	deltar.o \
+	deltac.o \
+	driver.o
+
+deltac: $(OBJS)
+	$(F90) -o deltac $(OBJS) $(LIBS)
+
+# dependencies
+
+local.o: io.o
+jacobi.o: local.o
+gamma.o: local.o
+deltar.o: gamma.o
+deltac.o: deltar.o jacobi.o
+driver.o: deltar.o deltac.o
+
+clean:
+	rm -f *.o *.mod *.out *.bin *~ deltac

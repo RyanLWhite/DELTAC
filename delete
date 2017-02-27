@@ -1,0 +1,5 @@
+#! /bin/ksh
+
+dirname=results/$1
+chmod -R +w $dirname
+rm -r $dirname

@@ -1,0 +1,16 @@
+Type (G=Graph, C=Contour):	G
+
+filename(s)
+x01.bin
+
+graph title:	Eigenvalues
+
+variable names
+0	q
+1	x0
+2	x1
+
+ix	iy	title
+0	1	x0
+0	2	x1
+0	1 2	x01

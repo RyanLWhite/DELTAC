@@ -1,0 +1,15 @@
+Type (G=Graph, C=Contour):	G
+
+filename(s)
+deltar.bin
+
+graph title:	Eigenvalues
+
+variable names
+0	slog
+1	mylog dlrp
+2	dlrm
+
+ix	iy	title
+0	1 	mylog dlrp
+0	2	dlrm

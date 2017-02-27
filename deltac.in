@@ -1,0 +1,153 @@
+&run_list
+	dqscan_flag=t
+	sxscan_flag=f
+	conv_flag=f
+/
+
+&dqscan_list
+	dlim=2
+	deltac_flag=t
+	deltar_flag=f
+
+	f=0
+	h=0
+	m=1
+	k=0
+	g=0
+
+	e=-4.269390796250071e-4
+	f=1.075508629560433e-6
+	h=1.801173941789956e-4
+	m=15.1976115981720
+	g=143.912453657064
+	k=519124.559865955      
+   
+	taua=.1
+	taur=7.18464313140172     
+	v1=1.26222398744831
+
+	taua=1
+	taur=1
+	v1=1
+
+	drmax=.1
+	drmin=-.1
+	ndr=5
+
+	slogmin=-4
+	slogmax=0.3
+	nslog=20
+
+	ntmax=4
+	fmax=2
+
+	rtol=1e-6
+	atol=1e-10
+
+	out=t
+	bin=t
+/
+
+&sxscan_list
+	e=-1.663687397261140E-003
+	f=1.356649137290427E-004
+	h=4.465272262091040E-004
+	m=19.0263194638893
+	k=7329.91728994662
+	g=12399.2842703182
+
+	e=.1
+	f=0
+	h=0
+	m=1
+	k=0
+	g=0
+   
+	taua=.1
+	taur=7.18464313140172     
+	v1=1.26222398744831
+
+	slogmin=-4
+	slogmax=1
+	nslog=5
+
+	xlogmin=1
+	xlogmax=1.5
+	nxlog=100
+
+	ntmax=4
+	fmax=2
+
+	rtol=1e-6
+	atol=1e-10
+
+	out=t
+	bin=t
+/
+
+&conv_list
+	e=-1.663687397261140E-003
+	f=1.356649137290427E-004
+	h=4.465272262091040E-004
+	m=19.0263194638893
+	k=7329.91728994662
+	g=12399.2842703182
+
+	e=.1
+	f=0
+	h=0
+	m=1
+	k=0
+	g=0
+
+	taua=1
+	taur=1
+
+	s=1e-1
+	xfac=1
+
+	rtol=1e-6
+	atol=1e-10
+
+	out=f
+	bin=t
+/
+
+&deltac_list
+	tid=3,5,6,4
+	deltac_bin_sol=f
+	deltac_out_sol=f
+	xmax_method=1
+        fulldomain = 0
+
+	rescale=t
+	pfac=1e-4
+	xfac=4
+	gal_method="resonant"
+	noexp=f
+
+	nx=128
+	deltac_tol=1e-8
+
+	nq=12
+	dx1dx2_flag=f
+	dx1=0.001
+	dx2=0.002
+	restore_ul=t
+	restore_uh=t
+	restore_us=t
+
+	cutoff=5
+	nstep=100000
+
+	interp_np=5
+	order_pow=10
+	order_exp=15
+
+	diagnose_res=f
+
+	x0_ua=0.3
+	x1_ua=1
+	nx_ua=100
+	outt=3
+/
